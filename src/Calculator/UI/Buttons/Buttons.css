@@ -1,0 +1,12 @@
+.btns {
+    display: flex;
+    font-size: 0;
+    flex-wrap: wrap;
+    margin:-10px 0 0 -10px;
+}
+.btns > div {
+    display: inline-block;
+    
+    width: calc(100% * (1/6) - 10px - 1px);
+    flex-grow: 1;
+}
