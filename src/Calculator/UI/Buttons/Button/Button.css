@@ -1,5 +1,6 @@
 :root {
     --primary-color: #ff81ad;
+    --operator-color: #ff4686;
     --white-color: #fff;
     --shadow: #000;
 }
@@ -7,7 +8,7 @@
 .btn {
     padding: 15px 30px;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 400;
     color: var(--white-color);
     background-color: var(--primary-color);
     border: 2px solid var(--primary-color);
@@ -16,9 +17,18 @@
     transition: 0.15s ease;
 }
 
+.operator {
+    background-color: var(--operator-color);
+    border: 2px solid var(--operator-color);
+}
+
 .btn:hover {
     box-shadow: 0 6px 18px 0 rgba(var(--shadow), 0.1);
     color: var(--primary-color);
     border-color: transparent;
     background-color: transparent;
-  }
+}
+
+.operator:hover {
+    color: var(--operator-color);
+}
