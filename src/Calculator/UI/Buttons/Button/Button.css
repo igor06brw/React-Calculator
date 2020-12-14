@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #f50057;
+    --primary-color: #ff81ad;
     --white-color: #fff;
     --shadow: #000;
 }
@@ -13,7 +13,7 @@
     border: 2px solid var(--primary-color);
     cursor: pointer;
     width: max-content;
-    transition: 0.25s ease;
+    transition: 0.15s ease;
 }
 
 .btn:hover {
