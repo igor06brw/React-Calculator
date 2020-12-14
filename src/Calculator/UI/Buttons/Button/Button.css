@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #f50057;
+    --white-color: #fff;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    width: max-content;
+    transition: 0.25s ease;
+}
