@@ -1,6 +1,7 @@
 :root {
     --primary-color: #f50057;
     --white-color: #fff;
+    --shadow: #000;
 }
 
 .btn {
@@ -14,3 +15,10 @@
     width: max-content;
     transition: 0.25s ease;
 }
+
+.btn:hover {
+    box-shadow: 0 6px 18px 0 rgba(var(--shadow), 0.1);
+    color: var(--primary-color);
+    border-color: transparent;
+    background-color: transparent;
+  }
