@@ -2,10 +2,11 @@
     display: flex;
     font-size: 0;
     flex-wrap: wrap;
-    margin:-10px 0 0 -10px;
+    text-align: center;
 }
 .btns > div {
     display: inline-block;
-    width: calc(100% * (1/6));
     flex-grow: 1;
+    box-sizing: border-box;
+    width: calc(100% * (1/4));
 }

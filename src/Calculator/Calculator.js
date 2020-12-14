@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Buttons from './UI/Buttons/Buttons';
 import Results from './UI/Results/Results'
+import './Calculator.css'
 
 class Calculator extends Component {
     state = {
@@ -8,7 +9,7 @@ class Calculator extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="calculator">
                 <Results />
                 <Buttons />
             </div>
