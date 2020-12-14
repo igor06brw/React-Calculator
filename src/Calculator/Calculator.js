@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Buttons from './UI/Buttons/Buttons';
+import Results from './UI/Results/Results'
 
-const Calculator = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+class Calculator extends Component {
+    state = {
+
+    }
+    render() {
+        return (
+            <div>
+                <Results />
+                <Buttons />
+            </div>
+        );
+    }
 }
 
 export default Calculator;
