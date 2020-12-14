@@ -19,9 +19,9 @@ const Buttons = (props) => {
             <Button data-target={"multiply"} classOfButton="btn operator">*</Button> 
             <Button data-target={0} classOfButton="btn">0</Button> 
             <Button data-target={"decimal"} classOfButton="btn">.</Button> 
-            <Button data-target={"AC"} classOfButton="btn">AC</Button> 
+            <Button data-target={"AC"} classOfButton="btn clear">AC</Button> 
             <Button data-target={"divide"} classOfButton="btn operator">/</Button>
-            <Button data-target={"equal"} classOfButton="btn">=</Button> 
+            <Button data-target={"equal"} classOfButton="btn equal">=</Button> 
         </div>
     );
 }

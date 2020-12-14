@@ -1,6 +1,8 @@
 :root {
     --primary-color: #ff81ad;
-    --operator-color: #ff4686;
+    --operator-color: #ff6299;
+    --equal-color: #ff528f;
+    --clear-color: #ff91b7;
     --white-color: #fff;
     --shadow: #000;
 }
@@ -21,6 +23,15 @@
     background-color: var(--operator-color);
     border: 2px solid var(--operator-color);
 }
+.equal {
+    background-color: var(--equal-color);
+    border: 2px solid var(--equal-color);
+}
+
+.clear {
+    background-color: var(--clear-color);
+    border: 2px solid var(--clear-color);
+}
 
 .btn:hover {
     box-shadow: 0 6px 18px 0 rgba(var(--shadow), 0.1);
@@ -31,4 +42,11 @@
 
 .operator:hover {
     color: var(--operator-color);
+}
+
+.equal:hover {
+    color: var(--equal-color);
+}
+.clear:hover {
+    color: var(--clear-color);
 }
