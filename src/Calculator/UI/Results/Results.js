@@ -1,7 +1,8 @@
 import React from 'react';
+import './Results.css'
 
-const Results = (props) => {
-    return ( <div>1234 + 5678</div> );
+const results = (props) => {
+    return ( <div className="results">1234 + 5678</div> );
 }
 
-export default Results;
+export default results;

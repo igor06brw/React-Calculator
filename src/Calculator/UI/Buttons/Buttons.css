@@ -3,6 +3,7 @@
     font-size: 0;
     flex-wrap: wrap;
     text-align: center;
+    max-width: 350px;
 }
 .btns > div {
     display: inline-block;

@@ -1,11 +1,3 @@
-:root {
-    --primary-color: #ff81ad;
-    --operator-color: #ff6299;
-    --equal-color: #ff528f;
-    --clear-color: #ff91b7;
-    --white-color: #fff;
-    --shadow: #000;
-}
 
 .btn {
     padding: 15px 10px;
