@@ -7,11 +7,15 @@ class Calculator extends Component {
     state = {
 
     }
+
+    onNumberHandler = (e) => {
+        console.log(e)
+    }
     render() {
         return (
             <div className="calculator">
                 <Results />
-                <Buttons />
+                <Buttons clicked={this.onNumberHandler}/>
             </div>
         );
     }

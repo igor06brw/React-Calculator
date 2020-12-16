@@ -3,9 +3,10 @@ import Button from './Button/Button'
 import "./Buttons.css"
 
 const Buttons = (props) => {
+    console.log(props)
     return (
-        <div className="btns">
-            <Button data-target={7} classOfButton="btn">7</Button> 
+        <div className="btns" >
+            <Button data-target={7} classOfButton="btn" click={() => props.clicked(7)}>7</Button> 
             <Button data-target={8} classOfButton="btn">8</Button>   
             <Button data-target={9} classOfButton="btn">9</Button> 
             <Button data-target={"add"} classOfButton="btn operator">+</Button> 
