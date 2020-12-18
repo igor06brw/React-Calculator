@@ -38,7 +38,7 @@ class Calculator extends Component {
     }
 
     
-
+    //  NUMBER
     assignDigit(e) {
         this.onCheckOperator(e);
         let tempString = this.state.currentValue;
@@ -63,12 +63,17 @@ class Calculator extends Component {
             return null;
         }
     }
-    onNumberHandler = (e) => {
-        this.assignValue(e)
+
+
+
+
+    // BUTTONS
+    onNumberHandler = (value) => {
+        this.assignValue(value)
         console.log(this.state);
     }
-    onOperatorHandler = (e) => {
-        console.log(e, 'operator');
+    onOperatorHandler = (operator) => {
+        this.onCheckOperator(operator);
     }
     render() {
         return (
