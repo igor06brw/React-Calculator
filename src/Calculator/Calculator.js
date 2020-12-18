@@ -20,6 +20,18 @@ class Calculator extends Component {
             const result = prevValue + Number(currentValue);
             this.setState({prevValue: result, currentValue: '', isDecimal: false})
         }
+        if(operator === '-') {
+            const result = prevValue - Number(currentValue);
+            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+        }
+        if(operator === '/') {
+            const result = prevValue / Number(currentValue);
+            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+        }
+        if(operator === '*') {
+            const result = prevValue * Number(currentValue);
+            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+        }
     }
 
     
