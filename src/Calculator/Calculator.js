@@ -11,36 +11,28 @@ class Calculator extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state);
+        console.log(this.state.prevValue, 'RESULT');
     }
 
 
     onCalculate(currentValue, operator, prevValue) {
-        let x;
         if(operator === '+') {
-            return x = Number(currentValue) + prevValue
+            const result = prevValue + Number(currentValue);
+            this.setState({prevValue: result, currentValue: '', isDecimal: false})
         }
-        console.log(x)
-
-        // (operator === '+') ? 
-        //     (x = Number(currentValue) + prevValue) 
-        // : (operator === '-') ?
-        //     (x = Number(currentValue) - prevValue) : (null)
-        
-
-
     }
 
     
     onCheckOperator(operator) {
         if(operator === '+' || operator === '-' || operator === '*' || operator === '/') {
+            console.log('clicked Operator: ', operator)
+            this.onCalculate(this.state.currentValue, operator, this.state.prevValue)
         }
     }
 
     
     //  NUMBER
     assignDigit(e) {
-        this.onCheckOperator(e);
         let tempString = this.state.currentValue;
         tempString += e;
         console.log(tempString)
