@@ -6,7 +6,7 @@ import './Calculator.css'
 class Calculator extends Component {
     state = {
         currentValue: '',
-        nextValue: '',
+        prevValue: null,
         isDecimal: false
     }
 
@@ -15,12 +15,35 @@ class Calculator extends Component {
     }
 
 
+    onCalculate(currentValue, operator, prevValue) {
+        let x;
+        if(operator === '+') {
+            return x = Number(currentValue) + prevValue
+        }
+        console.log(x)
+
+        // (operator === '+') ? 
+        //     (x = Number(currentValue) + prevValue) 
+        // : (operator === '-') ?
+        //     (x = Number(currentValue) - prevValue) : (null)
+        
+
+
+    }
+
+    
+    onCheckOperator(operator) {
+        if(operator === '+' || operator === '-' || operator === '*' || operator === '/') {
+        }
+    }
 
     
 
     assignDigit(e) {
+        this.onCheckOperator(e);
         let tempString = this.state.currentValue;
         tempString += e;
+        console.log(tempString)
         this.setState({currentValue: tempString});
     } 
     assignValue(number) {
@@ -44,11 +67,14 @@ class Calculator extends Component {
         this.assignValue(e)
         console.log(this.state);
     }
+    onOperatorHandler = (e) => {
+        console.log(e, 'operator');
+    }
     render() {
         return (
             <div className="calculator">
                 <Results />
-                <Buttons clicked={this.onNumberHandler}/>
+                <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler}/>
             </div>
         );
     }
