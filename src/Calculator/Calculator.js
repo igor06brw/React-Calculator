@@ -15,6 +15,10 @@ class Calculator extends Component {
         console.log(this.state, 'RESULT');
     }
     
+
+
+
+    // 
     onOperator(prevValue, operator, currentValue) {
         let result;
         if(operator === '+') {
@@ -27,6 +31,10 @@ class Calculator extends Component {
         }
         if(operator === '/') {
             result = Number(prevValue) / Number(currentValue);
+            if(result === Infinity) {
+                result = 0;
+                console.log('Cannot divide by 0!');
+            }
             this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
         if(operator === '*') {
@@ -34,16 +42,15 @@ class Calculator extends Component {
             this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
     }
-
-
     onCalculate(prevValue, operator, currentValue) {
-        if(prevValue === '') {
-            console.log('first type')
-            this.setState({prevValue: currentValue, currentValue: '', isDecimal: false}) 
+        if(prevValue === '' && operator.length > 0) {
+            this.setState({ prevValue: currentValue, currentValue: '', operator: operator, isDecimal: false }) 
+        }
+        if(operator.length >= 1) {
+            this.setState({ operator: operator })
         }
         if(prevValue.length > 0 && operator.length > 0 && currentValue.length > 0) {
-            console.log('do math!')
-            this.onOperator(prevValue, operator, currentValue)
+            this.onOperator(prevValue, this.state.operator, currentValue)
         } else {
             console.log('return nothing');
         }
@@ -51,6 +58,10 @@ class Calculator extends Component {
         console.log(operator, 0 < operator.length)
         console.log(currentValue, 0 < currentValue.length)
     }
+
+
+
+
 
     //  NUMBER
     assignDigit(e) {
@@ -85,9 +96,12 @@ class Calculator extends Component {
         console.log(this.state);
     }
     onOperatorHandler = (operator) => {
-        this.setState({operator: operator})
         this.onCalculate(this.state.prevValue, operator, this.state.currentValue);
     }
+
+
+
+
     render() {
         return (
             <div className="calculator">
