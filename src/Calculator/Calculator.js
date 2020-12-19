@@ -31,8 +31,8 @@ class Calculator extends Component {
         }
         if(operator === '/') {
             result = Number(prevValue) / Number(currentValue);
-            if(result === Infinity) {
-                result = 0;
+            if(result === Infinity || result === -Infinity) {
+                result = '';
                 console.log('Cannot divide by 0!');
             }
             this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
