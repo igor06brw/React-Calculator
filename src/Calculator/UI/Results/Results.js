@@ -6,3 +6,14 @@ const results = (props) => {
 }
 
 export default results;
+import React from 'react';
+
+const Results = () => {
+    return (
+        <div>
+            
+        </div>
+    );
+}
+
+export default Results;
