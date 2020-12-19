@@ -6,43 +6,52 @@ import './Calculator.css'
 class Calculator extends Component {
     state = {
         currentValue: '',
-        prevValue: null,
+        prevValue: '',
+        operator: '',
         isDecimal: false
     }
 
     componentDidUpdate() {
-        console.log(this.state.prevValue, 'RESULT');
+        console.log(this.state, 'RESULT');
     }
-
-
-    onCalculate(currentValue, operator, prevValue) {
+    
+    onOperator(prevValue, operator, currentValue) {
+        let result;
         if(operator === '+') {
-            const result = prevValue + Number(currentValue);
-            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+            result = Number(prevValue) + Number(currentValue);
+            this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
         if(operator === '-') {
-            const result = prevValue - Number(currentValue);
-            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+            result = Number(prevValue) - Number(currentValue);
+            this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
         if(operator === '/') {
-            const result = prevValue / Number(currentValue);
-            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+            result = Number(prevValue) / Number(currentValue);
+            this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
         if(operator === '*') {
-            const result = prevValue * Number(currentValue);
-            this.setState({prevValue: result, currentValue: '', isDecimal: false})
+            result = Number(prevValue) * Number(currentValue);
+            this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})
         }
     }
 
-    
-    onCheckOperator(operator) {
-        if(operator === '+' || operator === '-' || operator === '*' || operator === '/') {
-            console.log('clicked Operator: ', operator)
-            this.onCalculate(this.state.currentValue, operator, this.state.prevValue)
+
+    onCalculate(prevValue, operator, currentValue) {
+        if(prevValue === '') {
+            console.log('first type')
+            this.setState({prevValue: currentValue, currentValue: '', isDecimal: false}) 
         }
+        if(prevValue.length > 0 && operator.length > 0 && currentValue.length > 0) {
+            console.log('do math!')
+            this.onOperator(prevValue, operator, currentValue)
+        } else {
+            console.log('return nothing');
+        }
+        console.log(prevValue, 0 < prevValue.length)
+        console.log(operator, 0 < operator.length)
+        console.log(currentValue, 0 < currentValue.length)
     }
 
-    
     //  NUMBER
     assignDigit(e) {
         let tempString = this.state.currentValue;
@@ -51,7 +60,6 @@ class Calculator extends Component {
         this.setState({currentValue: tempString});
     } 
     assignValue(number) {
-        let currentValue = this.state.currentValue
         if (number === '.') { 
             this.assignDecimal(number)
         } else {
@@ -77,7 +85,8 @@ class Calculator extends Component {
         console.log(this.state);
     }
     onOperatorHandler = (operator) => {
-        this.onCheckOperator(operator);
+        this.setState({operator: operator})
+        this.onCalculate(this.state.prevValue, operator, this.state.currentValue);
     }
     render() {
         return (
