@@ -14,13 +14,17 @@ class Calculator extends Component {
     componentDidUpdate() {
         console.log(this.state, 'RESULT');
     }
+
+    
     
 
 
 
-    // 
+    // CALCULATION 
     onOperator(prevValue, operator, currentValue) {
         let result;
+
+        
         if(operator === '+') {
             result = Number(prevValue) + Number(currentValue);
             this.setState({prevValue: result.toString(), currentValue: '', isDecimal: false})

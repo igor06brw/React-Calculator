@@ -9,6 +9,7 @@
     cursor: pointer;
     width: max-content;
     transition: 0.15s ease;
+    user-select: none;
 }
 
 .operator {

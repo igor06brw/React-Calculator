@@ -9,6 +9,8 @@
     color: var(--white-color);
     background-color: var(--results-color);
     border: 2px solid var(--results-color);
-    cursor: pointer;
     transition: 0.15s ease;
+}
+.results::selection {
+    background-color: orange;
 }
