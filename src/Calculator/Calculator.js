@@ -106,10 +106,12 @@ class Calculator extends Component {
 
 
 
+
+
     render() {
         return (
             <div className="calculator">
-                <Results />
+                <Results results={this.state}/>
                 <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler}/>
             </div>
         );
