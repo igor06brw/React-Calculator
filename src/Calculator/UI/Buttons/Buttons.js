@@ -22,7 +22,7 @@ const Buttons = (props) => {
             <Button data-target={"decimal"} classOfButton="btn" click={() => props.clicked(".")}>.</Button> 
             <Button data-target={"AC"} classOfButton="btn clear" click={() => props.clicked("AC")}>AC</Button> 
             <Button data-target={"divide"} classOfButton="btn operator" click={() => props.operator("/")}>/</Button>
-            <Button data-target={"equal"} classOfButton="btn equal" click={() => props.clicked("=")}>=</Button> 
+            <Button data-target={"equal"} classOfButton="btn equal" click={() => props.equal("=")}>=</Button> 
         </div>
     );
 }

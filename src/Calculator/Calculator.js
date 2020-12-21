@@ -14,6 +14,7 @@ class Calculator extends Component {
     componentDidUpdate() {
         console.log(this.state, 'RESULT');
     }
+    
 
     
     
@@ -58,6 +59,20 @@ class Calculator extends Component {
         }
     }
 
+    // EQUAL
+    onEqual = (prevValue, operator, equal, currentValue) => {
+        if( prevValue.length > 0 && equal.length > 0 && operator.length > 0 && currentValue.length > 0) {
+            this.onOperator(prevValue, this.state.operator, currentValue)
+            this.setState({operator: ''});
+        }
+        // if(prevValue.length > 0) {
+        //     this.setState({ prevValue: currentValue, currentValue: '', operator: '', isDecimal: false })
+        // }
+    }
+
+    
+
+
 
 
 
@@ -66,7 +81,6 @@ class Calculator extends Component {
     assignDigit(e) {
         let tempString = this.state.currentValue;
         tempString += e;
-        console.log(tempString)
         this.setState({currentValue: tempString});
     } 
     assignValue(number) {
@@ -75,7 +89,6 @@ class Calculator extends Component {
         } else {
             this.assignDigit(number)
         }
-
     }
     assignDecimal(decimal) {
         if(!this.state.isDecimal) {
@@ -97,6 +110,9 @@ class Calculator extends Component {
     onOperatorHandler = (operator) => {
         this.onCalculate(this.state.prevValue, operator, this.state.currentValue);
     }
+    onEqualHandler = (sign) => {
+        this.onEqual(this.state.prevValue, this.state.operator, sign, this.state.currentValue)
+    }
 
 
 
@@ -107,7 +123,7 @@ class Calculator extends Component {
         return (
             <div className="calculator">
                 <Results results={this.state}/>
-                <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler}/>
+                <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler} equal={this.onEqualHandler}/>
             </div>
         );
     }
