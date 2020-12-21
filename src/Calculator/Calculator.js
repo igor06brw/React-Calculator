@@ -55,12 +55,7 @@ class Calculator extends Component {
         }
         if(prevValue.length > 0 && operator.length > 0 && currentValue.length > 0) {
             this.onOperator(prevValue, this.state.operator, currentValue)
-        } else {
-            console.log('return nothing');
         }
-        console.log(prevValue, 0 < prevValue.length)
-        console.log(operator, 0 < operator.length)
-        console.log(currentValue, 0 < currentValue.length)
     }
 
 
