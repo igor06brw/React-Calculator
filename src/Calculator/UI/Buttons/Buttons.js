@@ -20,7 +20,7 @@ const Buttons = (props) => {
             <Button data-target={"multiply"} classOfButton="btn operator" click={() => props.operator("*")}>*</Button> 
             <Button data-target={0} classOfButton="btn" click={() => props.clicked(0)}>0</Button> 
             <Button data-target={"decimal"} classOfButton="btn" click={() => props.clicked(".")}>.</Button> 
-            <Button data-target={"AC"} classOfButton="btn clear" click={() => props.clicked("AC")}>AC</Button> 
+            <Button data-target={"AC"} classOfButton="btn clear" click={() => props.clear()}>AC</Button> 
             <Button data-target={"divide"} classOfButton="btn operator" click={() => props.operator("/")}>/</Button>
             <Button data-target={"equal"} classOfButton="btn equal" click={() => props.equal("=")}>=</Button> 
         </div>

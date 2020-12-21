@@ -70,6 +70,11 @@ class Calculator extends Component {
         // }
     }
 
+    // CLEAR
+    onClear = () => {
+        this.setState({operator: '', prevValue: '', currentValue: '', isDecimal: false});
+    }
+
     
 
 
@@ -113,6 +118,9 @@ class Calculator extends Component {
     onEqualHandler = (sign) => {
         this.onEqual(this.state.prevValue, this.state.operator, sign, this.state.currentValue)
     }
+    onClearHandler = () => {
+        this.onClear();
+    }
 
 
 
@@ -123,7 +131,7 @@ class Calculator extends Component {
         return (
             <div className="calculator">
                 <Results results={this.state}/>
-                <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler} equal={this.onEqualHandler}/>
+                <Buttons clicked={this.onNumberHandler} operator={this.onOperatorHandler} equal={this.onEqualHandler} clear={this.onClearHandler}/>
             </div>
         );
     }
